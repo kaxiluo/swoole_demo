@@ -1,0 +1,37 @@
+{
+  "name": "tim/swoole_demo",
+  "description": "a swoole demo for test",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "symfony/console": "^4.3",
+    "illuminate/container": "^5.8",
+    "illuminate/config": "^5.8",
+    "illuminate/contracts": "^5.8",
+    "monolog/monolog": "^1.25",
+    "vlucas/phpdotenv": "^3.6",
+    "symfony/finder": "^4.3",
+    "ext-redis": "*"
+  },
+  "require-dev": {
+    "eaglewu/swoole-ide-helper": "dev-master"
+  },
+  "autoload": {
+    "files": [
+      "app/Helper/helpers.php",
+      "app/Foundation/helpers.php"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "secure-http": false
+  }
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$app = new \App\Foundation\Application(realpath(__DIR__));
+
+$app->singleton(\App\Contracts\Console\Kernel::class, \App\Foundation\Console\Kernel::class);
+
+$kernel = $app->make(\App\Contracts\Console\Kernel::class);
+
+$kernel->handle(
+    $input = new ArgvInput(),
+    new ConsoleOutput()
+);
